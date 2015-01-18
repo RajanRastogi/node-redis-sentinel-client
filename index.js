@@ -337,6 +337,8 @@ RedisSentinelClient.prototype.send_command = function (command, args, callback) 
 
 // adapted from index.js for RedisClient
 commands.forEach(function (command) {
+  command = command.split(' ')[0];
+
   function send_command(args, callback) {
     var sentinel = this;
 
